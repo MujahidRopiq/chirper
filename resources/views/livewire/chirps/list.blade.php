@@ -19,7 +19,7 @@ new class extends Component {
         Debugbar::info($this->chirps);
     }
 
-    #[On('chrip-created')]
+    #[On('chirp-created')]
     public function getChirps(): void
     {
         $this->chirps = Chirp::with('user')
@@ -43,7 +43,7 @@ new class extends Component {
 
         $chirp->delete();
 
-        $thid->getChirps();
+        $this->getChirps();
     }
 }; ?>
 
